@@ -1,95 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
-            background: linear-gradient(rgb(12, 93, 255),rgb(202, 201, 225));
+
+        body {
+            background: linear-gradient(rgb(12, 93, 255), rgb(202, 201, 225));
             height: 200vh;
         }
-        .hed{
-            background:linear-gradient(rgb(17, 10, 215),rgb(104, 143, 222));
+
+        .hed {
+            background: linear-gradient(rgb(17, 10, 215), rgb(104, 143, 222));
             height: 100%;
-            font-size: 34px;
+            padding: 18px;
+            font-size: 25px;
             text-align: center;
             border: 5px solid black;
             border-radius: 8px;
-            width: 500px;
-            
+
+
         }
-        .box{
+        .cen{
+            text-align: center;
+        }
+
+        .box {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
             margin-top: 20px;
-            
+
         }
-        .mat{
-            font-size: 40px;
+        .cen{
+            color: white;
+            font-size: 30px;
+        }
+
+        .mat {
+            font-size: 60px;
             margin: 10px;
             color: aliceblue;
             padding: 30px;
-            border-left: 5px solid black;
-            border-right: 5px solid black;
-            
+            border-left: 10px solid black;
+            border-right: 10px solid black;
+            text-align: center;
+            margin-top: 78px;
+            box-shadow: 0px 0px 50px 13px black;
+            border-radius: 56px;
         }
+
+        
     </style>
 </head>
+
 <body>
     <div class="box">
-        <h1 class="hed">VALUES OF FIRST MATRIX </h1>
-        <h1 id="sub1" class="mat"></h1>
-        <h1 class="hed">VALUES OF SECOND MATRIX </h1>
-        <h1 id="sub2" class="mat"></h1>
+        <div class="sub">
+            <h1 class="hed">VALUES OF FIRST MATRIX </h1>
+            <h1 id="sub1" class="mat"></h1>
+        </div>
+        <h1 class="cen">+</h1>
+        <div class="sub">
+            <h1 class="hed">VALUES OF SECOND MATRIX </h1>
+            <h1 id="sub2" class="mat"></h1>
+        </div>
+        <br>
+    </div>
+    
+    <div class="sub">
+        <h1 class="cen">=</h1>
         <h1 class="hed">SUM OF FIRST AND SECOND MATRIX </h1>
         <h1 id="sub3" class="mat"></h1>
     </div>
 
+
     <script>
-        let mat_1 = [[],[],[]]
-        let mat_2 = [[],[],[]]
-        let sum =   [[],[],[]]
-        let i ="";
-        let j= "";
-       
-     for ( i = 0; i < 3; i++) {
-         for ( j = 0; j <3; j++) {
-            mat_1[i][j] = parseInt(prompt(`Enter the values of 1st matrix at row ${i+1} and column ${j+1} `))  
-            document.getElementById('sub1').innerText+=(mat_1[i][j]);       
-         }
-         document.getElementById('sub1').innerHTML+=("<br>")
-    }
+        let mat_1 = [[], [], []]
+        let mat_2 = [[], [], []]
+        let sum = [[], [], []]
+        let i = "";
+        let j = "";
+
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                mat_1[i][j] = parseInt(prompt(`Enter the values of 1st matrix at row ${i + 1} and column ${j + 1} `))
+                document.getElementById('sub1').innerText += (mat_1[i][j]);
+            }
+            document.getElementById('sub1').innerHTML += ("<br>")
+        }
 
 
-    
-      for (let i = 0; i < 3; i++) {
-         for (let j = 0; j <3; j++) {
-           mat_2[i][j] = parseInt(prompt(`Enter the values of 2nd matrix at row ${i+1} and column ${j+1}`)) 
-    document.getElementById('sub2').innerText+=(mat_2[i][j]);         
-          }    
-          document.getElementById('sub2').innerHTML+=("<br>")
-     }
-     
 
-     console.log(mat_1);
-     console.log(mat_2);
-     
-     for (let i = 0; i <3; i++) {
-         for ( j = 0; j < 3; j++) {
-              sum[i][j] = mat_1[i][j] + mat_2[i][j]   
-                document.getElementById('sub3').innerText+=(sum[i][j]);     
-         }
-         document.getElementById('sub3').innerHTML+=("<br>")
-         
-     }
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                mat_2[i][j] = parseInt(prompt(`Enter the values of 2nd matrix at row ${i + 1} and column ${j + 1}`))
+                document.getElementById('sub2').innerText += (mat_2[i][j]);
+            }
+            document.getElementById('sub2').innerHTML += ("<br>")
+        }
+
+
+        console.log(mat_1);
+        console.log(mat_2);
+
+        for (let i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                sum[i][j] = mat_1[i][j] + mat_2[i][j]
+                document.getElementById('sub3').innerText += (sum[i][j]);
+            }
+            document.getElementById('sub3').innerHTML += ("<br>")
+
+        }
         console.log(sum);
     </script>
 </body>
+
 </html>
